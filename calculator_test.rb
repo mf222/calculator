@@ -1,9 +1,9 @@
 require 'minitest/autorun'
-require './Calculator'
+require_relative 'calculator'
 
-class TestCalculator < Minitest::test
+class TestCalculator < Minitest::Test
 
-  setup do
+  def setup
     @calculator = Calculator.new
   end
 
@@ -19,7 +19,7 @@ class TestCalculator < Minitest::test
 
   def test_calculate_answer_mutiply
     respuesta = @calculator.calculate_answer('multiply', 5, 1)
-    assert_equal respuesta, 4
+    assert_equal respuesta, 5
   end
 
   def test_calculate_answer_divide

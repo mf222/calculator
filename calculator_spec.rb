@@ -1,6 +1,6 @@
 require 'minitest/spec'
 require 'minitest/autorun'
-require './Calculator'
+require 'calculator'
 
 describe 'Calculator' do
 
