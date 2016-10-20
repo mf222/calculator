@@ -3,7 +3,7 @@ require './Calculator'
 
 class TestCalculator < Minitest::test
 
-   setup do
+  setup do
     @calculator = Calculator.new
   end
 
@@ -33,6 +33,36 @@ class TestCalculator < Minitest::test
 
   def test_div_cero
     assert_raises(@calculator.calculate_answer('divide', 5, 0))
+  end
+
+  def test_request_calculation_type_1
+    respuesta = @calculator.request_calculation_type(1)
+    assert_equal respuesta, 'add'
+  end
+
+  def test_request_calculation_type_2
+    respuesta = @calculator.request_calculation_type(2)
+    assert_equal respuesta, 'subtract'
+  end
+
+  def test_request_calculation_type_3
+    respuesta = @calculator.request_calculation_type(3)
+    assert_equal respuesta, 'multiply'
+  end
+
+  def test_request_calculation_type_4
+    respuesta = @calculator.request_calculation_type(4)
+    assert_equal respuesta, 'divide'
+  end
+
+  def test_request_calculation_type_other_str
+    respuesta = @calculator.request_calculation_type('hansfindel')
+    assert_equal respuesta, 'error'
+  end
+
+  def test_request_calculation_type_other_number
+    respuesta = @calculator.request_calculation_type(-1)
+    assert_equal respuesta, 'error'
   end
 
 end

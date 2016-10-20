@@ -4,11 +4,15 @@ class Calculator
   # It returns their name
   def greeting
     puts 'Hello!  Please type your name: '
-    name = gets
+    name = get_name
     puts "\nIt is nice to meet you #{name}\n"
     puts 'I am a simple calculator application. '\
          "I can add, subtract, multiply, and divide.\n\n"
     name
+  end
+
+  def get_name
+    gets
   end
 
   # This method ask the user what type of calculation they would like to perform
@@ -23,7 +27,7 @@ class Calculator
     elsif operation_selection == 4
       'divide'
     else
-      raise 'error'
+      'error'
     end
   end
 
