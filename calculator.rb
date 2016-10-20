@@ -23,7 +23,7 @@ class Calculator
     elsif operation_selection == 4
       'divide'
     else
-      'error'
+      raise 'error'
     end
   end
 
@@ -37,6 +37,9 @@ class Calculator
     elsif operator == 'multiply'
       a * b
     elsif operator == 'divide'
+      if b == 0
+        raise 'cero div'
+      end
       a / b
     end
   end
